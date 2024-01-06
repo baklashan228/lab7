@@ -37,5 +37,16 @@ public class HelloController {
     void initialize() {
 
     }
+    public void settings(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 800, 700);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
 
+        stage.setScene(scene);
+        stage.setTitle("Настройки");
+        stage.show();
+    }
 }

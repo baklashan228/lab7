@@ -24,7 +24,7 @@
                   <Font size="27.0" />
                </font>
             </Button>
-            <Button fx:id="settings" layoutX="700.0" layoutY="166.0" mnemonicParsing="false" prefHeight="238.0" prefWidth="218.0" style="-fx-background-color: #F39C63;" text="Настройки">
+            <Button fx:id="settings" layoutX="700.0" layoutY="166.0" mnemonicParsing="false" onAction="#settings" prefHeight="238.0" prefWidth="218.0" style="-fx-background-color: #F39C63;" text="Настройки">
                <font>
                   <Font size="25.0" />
                </font>

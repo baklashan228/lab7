@@ -22,21 +22,25 @@ public class SettingsController implements Initializable {
     @FXML
     private AnchorPane acnhorPane;
     @FXML
-    private ChoiceBox<String> dropDownMenu;
+    private ChoiceBox<String> choice;
     TabulatedFunctionFactory factory = new ArrayTabulatedFunctionFactory();
 
     @FXML
-    void toChooseFactory(ActionEvent event) {
+    void save(ActionEvent event) {
         Map<String, TabulatedFunctionFactory> map = new HashMap<String, TabulatedFunctionFactory>();
         map.put("Массив", new ArrayTabulatedFunctionFactory());
         map.put("Список", new LinkedListTabulatedFunctionFactory());
+
+        ChoosenFactory.getInstance().setFactory(map.get(choice.getValue()));
+        Stage stage = (Stage) choice.getScene().getWindow();
+        stage.close();
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> list = FXCollections.observableArrayList("Массив", "Список");
-        dropDownMenu.getItems().addAll(list);
-        dropDownMenu.getSelectionModel().select(0);
+        choice.getItems().addAll(list);
+        choice.getSelectionModel().select(0);
     }
 }
