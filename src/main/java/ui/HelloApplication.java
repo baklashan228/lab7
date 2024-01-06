@@ -1,5 +1,6 @@
 package ui;
 
+import functions.factory.ArrayTabulatedFunctionFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ public class HelloApplication extends Application {
         stage.setTitle("ЛР 7");
         stage.setScene(scene);
         stage.show();
+        ChoosenFactory.getInstance().setFactory(new ArrayTabulatedFunctionFactory());
     }
 
     public static void main(String[] args) {

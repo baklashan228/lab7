@@ -1,8 +1,6 @@
 package ui;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,12 +12,6 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class HelloController {
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
 
     @FXML
     public Button differentiation;
@@ -37,6 +29,30 @@ public class HelloController {
     void initialize() {
 
     }
+    public void operations(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("operations.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 1200, 752);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.WINDOW_MODAL);
+
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void diffFunction(ActionEvent event) throws IOException {
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("DiffFunction.fxml"));
+        Parent root = fxmlLoader.load();
+        Scene scene = new Scene(root, 940, 750);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+
+        stage.setScene(scene);
+        stage.show();
+
+    }
     public void settings(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("settings.fxml"));
         Parent root = fxmlLoader.load();
@@ -46,7 +62,6 @@ public class HelloController {
         stage.initModality(Modality.APPLICATION_MODAL);
 
         stage.setScene(scene);
-        stage.setTitle("Настройки");
         stage.show();
     }
 }

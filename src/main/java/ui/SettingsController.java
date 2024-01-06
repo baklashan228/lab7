@@ -20,10 +20,7 @@ import java.util.ResourceBundle;
 public class SettingsController implements Initializable {
 
     @FXML
-    private AnchorPane acnhorPane;
-    @FXML
     private ChoiceBox<String> choice;
-    TabulatedFunctionFactory factory = new ArrayTabulatedFunctionFactory();
 
     @FXML
     void save(ActionEvent event) {
